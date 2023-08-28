@@ -1,15 +1,18 @@
-# Simple ERC721 with mint and burn function
+# WrathNFT Smart Contract
 
-This project demonstrates a basic ERC721 contract with mint and burn functions. It also includes a simple test suite. 
+## Introduction
+"WraithNFT", is an ERC721 smart contract for minting and burning Non-Fungible Tokens (NFTs) on the Ethereum blockchain. It has a capped supply, defined minting price, and a burn function that allows users to burn their NFTs.
 
-
-## Setup
+## Testing
+The smart contract is tested using Hardhat, a development environment to compile, deploy, test, and debug your Ethereum software. The tests are written in Solidity and JavaScript. The tests are located in the `test` directory. The tests can be run using the following command:
 
 ```shell
-npm install
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+npx hardhat test test/wraithnft.js
 ```
+
+## Dependencies
+The smart contract uses the following dependencies:
+- OppenZeppelin's ERC721 smart contract
+
+## Future Work
+- Allow users to burn their NFTs and receive some economic incentive
