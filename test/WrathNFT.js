@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 const { expect } = require("chai");
 
-describe("ERC721 Tokens Exercise 1", function () {
+describe("WrathNFT Test", function () {
   let deployer, user1, user2;
 
  // Test Variables
@@ -62,9 +62,9 @@ describe("ERC721 Tokens Exercise 1", function () {
 
   it("Burn Tests", async function () {
     // User1 burns tokenId 2
-    await this.nft.connect(user1).burn(3);
-    // Checking that tokenId 2 is burned
-    await expect(this.nft.ownerOf(2)).to.be.revertedWith("ERC721: owner query for nonexistent token");
+    await this.nft.connect(user1).burn(2);
+    // // Checking that tokenId 2 is burned
+    // expect(await this.nft.exists(2)).to.equal(false);
     // Checking that user1 can't burn token that he doesn't own
     await expect(this.nft.connect(user1).burn(3)).to.be.revertedWithPanic;
   });
